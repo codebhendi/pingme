@@ -9,13 +9,35 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
+    "@expo/webpack-config": "^18.0.1",
+    "@react-native-async-storage/async-storage": "1.17.11",
+    "axios": "^1.4.0",
+    "axios-case-converter": "^1.1.0",
     "expo": "~48.0.5",
+    "expo-image-picker": "~14.1.1",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
-    "react-native": "0.71.3"
+    "react-dom": "18.2.0",
+    "react-native": "0.71.8",
+    "react-native-svg": "13.4.0",
+    "react-native-web": "~0.18.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-ft-flow": "^2.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-react-native": "^4.0.0",
+    "prettier": "^2.8.7",
+    "react-native-svg-transformer": "^1.0.0"
   },
-  "private": true
+  "private": true,
+  "author": "shubham bhendarkar <shubham.bhendarkar@loconav.com>",
+  "license": "MIT"
 }
