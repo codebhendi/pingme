@@ -18,5 +18,9 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'comma-dangle': 0,
     'import/prefer-default-export': 0,
+    'react-hooks/exhaustive-deps': 1,
+    react: {
+      'function-component-definition': [2, { namedComponents: 'arrow-function' }],
+    },
   },
 };

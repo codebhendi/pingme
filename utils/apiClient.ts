@@ -1,15 +1,12 @@
-import axios from 'axios';
+import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import applyConverters from 'axios-case-converter';
 
 const apiClient = applyConverters(axios.create());
 
 // ERROR COLLECTOR V2
-export const parseErrorCodeV2 = error => {
+export const parseErrorCodeV2 = (error: AxiosError) => {
   if (error.response) {
     if (error.response.status === 401) {
-      // error handling here
-      // TODO: Enhace this in future with new conditions
-      // Router.push(AUTH_ROUTE.LOGIN);
       console.error(error);
     }
   }
@@ -17,23 +14,23 @@ export const parseErrorCodeV2 = error => {
 };
 
 // Request parsing interceptor
-export const requestInterceptor = config => {
+export const requestInterceptor = (config:AxiosRequestConfig): AxiosRequestConfig => {
   const newConfig = { ...config };
   if (!config.baseURL) {
-    newConfig.baseURL = window.location.origin;
+    newConfig.baseURL = 'http://192.168.1.4:5001';
   }
 
-  if (!Object.keys(config.headers).includes('Authorization')) {
-    newConfig.headers = {
-      Authorization: window.localStorage.getItem('auth_token'),
-    };
-  }
+  // if (!Object.keys(config.headers).includes('Authorization')) {
+  //   newConfig.headers = {
+  //     Authorization: window.localStorage.getItem('auth_token'),
+  //   };
+  // }
 
   return newConfig;
 };
 
 // Request parsing interceptor
-apiClient.interceptors.request.use(requestInterceptor, error => {
+apiClient.interceptors.request.use(requestInterceptor as any, error => {
   console.error('[REQUEST_ERROR]', error);
 });
 

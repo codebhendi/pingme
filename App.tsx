@@ -1,13 +1,13 @@
 import { StyleSheet, View } from 'react-native';
 import BaseModule from './modules';
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <View style={styles.container}>
       <BaseModule />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -17,3 +17,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;

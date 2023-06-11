@@ -1,6 +1,6 @@
 import { View, Pressable, Text, StyleSheet } from 'react-native';
 
-function Button({ label, onPress }) {
+const Button: React.FC<{ label: string; onPress: () => void }> = ({ label, onPress }) => {
   return (
     <View style={styles.buttonContainer}>
       <Pressable style={styles.button} onPress={onPress}>
@@ -8,7 +8,7 @@ function Button({ label, onPress }) {
       </Pressable>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   buttonContainer: {
