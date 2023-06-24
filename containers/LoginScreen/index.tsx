@@ -3,8 +3,9 @@ import { TextInput, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AUTH_TOKEN, PingMeContext } from '../../global.constants';
 import apiClient from '../../utils/apiClient';
-import Button from '../Button';
+import Button from '../../components/Button';
 import { STORE_ACTIONS } from '../../types';
+import { Text } from 'react-native-ui-lib';
 
 const LoginScreen: React.FC = () => {
   const { store, dispatch } = useContext(PingMeContext);
@@ -45,6 +46,9 @@ const LoginScreen: React.FC = () => {
 
   return (
     <View style={{ padding: 10 }}>
+      <Text h1 ping>
+        Login
+      </Text>
       <TextInput
         style={{ height: 40 }}
         placeholder="Email"
